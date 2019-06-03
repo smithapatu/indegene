@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="indegene.js"></script>
+  <link rel="stylesheet" href="indegene.css">
+</head>
+<body ng-app ="angularModule" >
+<div ng-controller="angularController">
+
+  <table cellpadding="0" cellspacing="0" >
+            <tr>
+                <th>Customer Id</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Orders</th>
+            </tr>
+            <tbody ng-repeat="a in josndata">
+                <tr>
+                    <td>{{a.CustomerId}}</td>
+                    <td>{{a.Name}}</td>
+                    <td>{{a.Country}}</td>
+                    <td>
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th>Order Id</th>
+                                <th>Freight</th>
+                                <th>ShipCountry</th>
+                            </tr>
+                            <tbody ng-repeat="b in a.Orders">
+                            <tr>
+                                <td>{{b.OrderId}}</td>
+                                <td>{{b.Freight}}</td>
+                                <td>{{b.ShipCountry}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+</body>
+</html>
